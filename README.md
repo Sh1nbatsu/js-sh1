@@ -1,1 +1,1 @@
-# js-sh1
+# js-sh1 - initial homework repository
