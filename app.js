@@ -2,14 +2,14 @@ const buttons = document.querySelectorAll("button");
 
 const divs = document.querySelectorAll(".content");
 
-function resetButtons(buttons, index) {
+function switchButtons(buttons, index) {
   buttons.forEach((b) => {
     b.classList.remove("active");
   });
   buttons[index].classList.add("active");
 }
 
-function renderDivs(divs, index) {
+function switchDivs(divs, index) {
   divs.forEach((div) => {
     div.classList.remove("active");
   });
@@ -18,7 +18,7 @@ function renderDivs(divs, index) {
 
 buttons.forEach((button, index) => {
   button.addEventListener("click", (e) => {
-    resetButtons(buttons, index);
-    renderDivs(divs, index);
+    switchButtons(buttons, index);
+    switchDivs(divs, index);
   });
 });
