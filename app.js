@@ -2,14 +2,14 @@ const buttons = document.querySelectorAll("button");
 
 const divs = document.querySelectorAll(".content");
 
-function switchButtons(buttons, index) {
+function switchBtnActiveState(buttons, index) {
   buttons.forEach((b) => {
     b.classList.remove("active");
   });
   buttons[index].classList.add("active");
 }
 
-function switchDivs(divs, index) {
+function switchDivActiveState(divs, index) {
   divs.forEach((div) => {
     div.classList.remove("active");
   });
@@ -18,7 +18,7 @@ function switchDivs(divs, index) {
 
 buttons.forEach((button, index) => {
   button.addEventListener("click", (e) => {
-    switchButtons(buttons, index);
-    switchDivs(divs, index);
+    switchBtnActiveState(buttons, index);
+    switchDivActiveState(divs, index);
   });
 });
