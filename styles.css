@@ -12,15 +12,22 @@ button.active {
   background-color: gray;
 }
 
-.wrapper {
+.container {
   max-width: 1400px;
   margin: auto;
+}
+
+.container:not(:last-of-type) {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 nav {
   background-color: gainsboro;
   border: 1px solid rgb(173, 173, 173);
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
@@ -35,8 +42,24 @@ button:hover {
   background-color: rgb(169, 169, 169);
 }
 
-button:first-of-type {
-  margin: 0;
+.light-theme {
+  border: 1px gray solid;
+  color: white;
+  background-color: rgb(61, 61, 61);
+}
+
+.light-theme:hover {
+  background-color: rgb(81, 81, 81);
+}
+
+.dark-theme {
+  color: black;
+  background-color: rgb(205, 205, 205);
+  border: 1px gray solid;
+}
+
+.dark {
+  background-color: rgb(19, 19, 19);
 }
 
 .content {
@@ -44,5 +67,11 @@ button:first-of-type {
   padding: 24px;
   background-color: aqua;
   border: 1px solid gainsboro;
+  border-radius: 4px;
+}
+
+.content-wrapper {
+  padding: 20px;
+  background-color: rgb(181, 196, 210);
   border-radius: 4px;
 }
