@@ -14,19 +14,23 @@ class timeManager {
     }, 500);
   }
 
+  updateDate() {
+    this.date = new Date();
+  }
+
   updateSeconds() {
     this.seconds.innerText = this.date.getSeconds();
-    this.date = new Date();
+    this.updateDate()
   }
 
   updateMinutes() {
     this.minutes.innerText = this.date.getMinutes();
-    this.date = new Date();
+    this.updateDate()
   }
 
   updateHours() {
     this.hours.innerText = this.date.getHours();
-    this.date = new Date();
+    this.updateDate()
   }
 }
 
