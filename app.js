@@ -1,4 +1,4 @@
-class timeManager {
+class createClock {
   constructor() {
     this.hours = document.getElementById("hours");
     this.minutes = document.getElementById("minutes");
@@ -34,6 +34,6 @@ class timeManager {
   }
 }
 
-const time = new timeManager();
+const time = new createClock();
 
 time.init();
