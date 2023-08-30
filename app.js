@@ -1,39 +1,16 @@
-class timeManager {
-  constructor() {
-    this.hours = document.getElementById("hours");
-    this.minutes = document.getElementById("minutes");
-    this.seconds = document.getElementById("seconds");
-    this.date = new Date();
+const div = document.querySelector("#parent-element");
+
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+
+xhr.onload = () => {
+  if (xhr.status >= 200 && xhr.status < 300) {
+    const resoponse = JSON.parse(xhr.responseText);
+    div.innerHTML = `<p>${resoponse.title}</p>`;
+  } else {
+    console.error("Ошибка при получении запроса", xhr.status);
   }
+};
 
-  init() {
-    setInterval(() => {
-      this.updateHours();
-      this.updateMinutes();
-      this.updateSeconds();
-    }, 500);
-  }
-
-  updateDate() {
-    this.date = new Date();
-  }
-
-  updateSeconds() {
-    this.seconds.innerText = this.date.getSeconds();
-    this.updateDate()
-  }
-
-  updateMinutes() {
-    this.minutes.innerText = this.date.getMinutes();
-    this.updateDate()
-  }
-
-  updateHours() {
-    this.hours.innerText = this.date.getHours();
-    this.updateDate()
-  }
-}
-
-const time = new timeManager();
-
-time.init();
+xhr.send();
