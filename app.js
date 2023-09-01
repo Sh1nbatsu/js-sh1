@@ -4,6 +4,7 @@ class createClock {
     this.minutes = document.getElementById("minutes");
     this.seconds = document.getElementById("seconds");
     this.date = new Date();
+    this.init();
   }
 
   init() {
@@ -35,5 +36,3 @@ class createClock {
 }
 
 const time = new createClock();
-
-time.init();
